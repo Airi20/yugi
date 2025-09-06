@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>年齢確認サイト</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      text-align: center;
+      margin: 50px;
+      background: #fefefe;
+    }
+    .screen {
+      display: none;
+    }
+    .active {
+      display: block;
+    }
+    button {
+      margin: 10px;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      background-color: #4CAF50;
+      color: white;
+    }
+    button.no {
+      background-color: #f44336;
+    }
+  </style>
+</head>
+<body>
+  <!-- 年齢確認画面 -->
+  <div id="age-check" class="screen active">
+    <h2>あなたは18歳以上ですか？</h2>
+    <button onclick="showScreen('yes')">はい</button>
+    <button class="no" onclick="showScreen('no')">いいえ</button>
+  </div>
+
+  <!-- はいを押した後の画面 -->
+  <div id="yes" class="screen">
+    <h2>ゆうぎのクズな話コーナー</h2>
+    <p>例：「その程度でしたか笑」って言われました。<br>
+       →クズ発言ゲット。</p>
+    <p>例：「俺とはセフレで笑」→いやそれは無理。</p>
+    <p>他にも随時更新予定…</p>
+  </div>
+
+  <!-- いいえを押した後の画面 -->
+  <div id="no" class="screen">
+    <h2>ごめんねえ</h2>
+    <p>でも、心が大人なら見てもいいよ😉</p>
+  </div>
+
+  <script>
+    function showScreen(id) {
+      document.querySelectorAll('.screen').forEach(el => el.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+    }
+  </script>
+</body>
+</html>
