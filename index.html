@@ -30,6 +30,9 @@
     button.no {
       background-color: #f44336;
     }
+    button.back {
+      background-color: #555;
+    }
   </style>
 </head>
 <body>
@@ -47,12 +50,14 @@
        →クズ発言ゲット。</p>
     <p>例：「俺とはセフレで笑」→いやそれは無理。</p>
     <p>他にも随時更新予定…</p>
+    <button class="back" onclick="showScreen('age-check')">戻る</button>
   </div>
 
   <!-- いいえを押した後の画面 -->
   <div id="no" class="screen">
     <h2>ごめんねえ</h2>
     <p>でも、心が大人なら見てもいいよ😉</p>
+    <button class="back" onclick="showScreen('age-check')">戻る</button>
   </div>
 
   <script>
